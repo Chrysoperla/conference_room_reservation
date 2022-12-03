@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conference rooms</title>
+</head>
+<body>
+<table>
+    <tbody>
+    <tr>
+        <td><a href="/home">Home</a></td>
+        <td><a href="/add">Add new conference room</a></td>
+        <td><a href="/search">Find room</a></td>
+    </tr>
+    </tbody>
+    </table>
+<h1> Conference rooms </h1>
+{% for room in room_list %}
+<a href="/room/info/{{room.id}}"> {{ room.name }} </a>
+{{ room.seats}}
+{% if room.projector == True %}
+Yes
+{% elif room.projector == False %}
+No
+{% endif %}
+{% if room.reserved %} Occupied today
+{% else %} Free today
+{% endif %}
+<a href="/room/reserve/{{room.id}}">Reserve</a>
+<a href="/room/edit/{{room.id}}">Edit</a>
+<a href="/room/delete/{{room.id}}">Delete</a>
+<br>
+{% endfor %}
+<footer>Made by <a href="https://github.com/Chrysoperla">Chrysoperla</a> </footer>
+</body>
+</html>

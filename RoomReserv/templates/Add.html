@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new conference room</title>
+</head>
+<body>
+<table>
+    <tbody>
+    <tr>
+        <td><a href="/home">Home</a></td>
+        <td><a href="/add">Add new conference room</a></td>
+        <td><a href="/search">Find room</a></td>
+    </tr>
+    </tbody>
+    </table>
+<h1> Add new conference room </h1>
+ <form method="POST">
+     {% csrf_token %}
+        <label>
+            Room name:
+            <input type="text"
+                name="room_name">
+        </label>
+        <label>
+            Number of seats:
+            <input type="number"
+                name="seats">
+        </label>
+        <label for="projector">Projector:</label>
+            <select name="projector" id="projector">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            </select>
+        <label>
+            <button type="submit">
+                Submit
+            </button>
+        </label>
+     </form>
+         {{ error_name }}
+<footer>Made by <a href="https://github.com/Chrysoperla">Chrysoperla</a> </footer>
+</body>
+</html>

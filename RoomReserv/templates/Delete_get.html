@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+<table>
+    <tbody>
+    <tr>
+        <td><a href="/home">Home</a></td>
+        <td><a href="/add">Add new conference room</a></td>
+        <td><a href="/search">Find room</a></td>
+    </tr>
+    </tbody>
+    </table>
+Warning! You are trying to delete room {{room.name}}. Are you certain of that?
+<form method="POST">
+     {% csrf_token %}
+    <label>
+            <button type="submit">
+                Submit
+            </button>
+        </label>
+     </form>
+<footer>Made by <a href="https://github.com/Chrysoperla">Chrysoperla</a> </footer>
+</body>
+</html>
